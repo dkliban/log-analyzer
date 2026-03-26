@@ -1,0 +1,8 @@
+type: '@dkliban/pulp-content-log-collector'
+typeVersion: 2026.03.25.1
+id: 11bc1536-76e0-4a97-8847-340bd0e8ee69
+name: pulp-content-slo
+version: 1
+tags: {}
+globalArguments: {}
+methods: {}

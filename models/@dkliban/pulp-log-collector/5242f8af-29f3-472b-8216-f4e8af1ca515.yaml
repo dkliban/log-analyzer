@@ -1,0 +1,10 @@
+type: '@dkliban/pulp-log-collector'
+typeVersion: 2026.03.25.1
+id: 5242f8af-29f3-472b-8216-f4e8af1ca515
+name: pulp-api-slo
+version: 1
+tags: {}
+globalArguments:
+  namespace: pulp-prod
+  podSelector: pod=pulp-api
+methods: {}

@@ -1,0 +1,7 @@
+id: 3b58b7e7-5ce6-40d1-a0ca-06222122c1e1
+name: pulp-jira-creds
+type: local_encryption
+config:
+  auto_generate: true
+  base_dir: /home/dkliban/log-analyzer
+createdAt: '2026-03-26T03:48:52.128Z'

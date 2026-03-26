@@ -1,0 +1,12 @@
+type: '@dkliban/pulp-jira-tracker'
+typeVersion: 2026.03.25.1
+id: eefb236c-d0cd-4f00-b776-b7d9ca1ae50d
+name: pulp-jira
+version: 1
+tags: {}
+globalArguments:
+  jiraUrl: '${{ vault.get(pulp-jira-creds, JIRA_URL) }}'
+  jiraEmail: '${{ vault.get(pulp-jira-creds, JIRA_EMAIL) }}'
+  jiraApiToken: '${{ vault.get(pulp-jira-creds, JIRA_API_TOKEN) }}'
+  projectKey: PULP
+methods: {}

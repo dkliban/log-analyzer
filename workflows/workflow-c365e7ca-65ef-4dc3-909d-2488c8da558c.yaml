@@ -1,0 +1,39 @@
+id: c365e7ca-65ef-4dc3-909d-2488c8da558c
+name: pulp-slow-request-monitor
+description: Detect slow pulp-api requests (>30s) and file deduplicated Jira issues per endpoint
+tags: {}
+version: 1
+jobs:
+  - name: analyze-logs
+    description: Fetch pulp-api pod logs and extract requests exceeding 30 seconds
+    steps:
+      - name: fetch-and-parse
+        description: Run log analysis across all pulp-api pods in pulp-prod
+        task:
+          type: model_method
+          modelIdOrName: pulp-log-analysis
+          methodName: analyze
+        dependsOn: []
+        weight: 0
+        allowFailure: false
+    dependsOn: []
+    weight: 0
+  - name: manage-jira-issues
+    description: Create or comment on Jira issues for each slow endpoint
+    steps:
+      - name: ensure-issues
+        description: Deduplicate by normalized endpoint path and file issues in project PULP
+        task:
+          type: model_method
+          modelIdOrName: pulp-jira
+          methodName: ensure_issues
+          inputs:
+            endpoints: ${{ data.latest("pulp-log-analysis", "main").attributes.endpoints }}
+        dependsOn: []
+        weight: 0
+        allowFailure: false
+    dependsOn:
+      - job: analyze-logs
+        condition:
+          type: succeeded
+    weight: 0

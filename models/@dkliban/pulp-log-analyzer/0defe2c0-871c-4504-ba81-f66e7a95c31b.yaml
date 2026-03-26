@@ -1,0 +1,8 @@
+type: '@dkliban/pulp-log-analyzer'
+typeVersion: 2026.03.25.1
+id: 0defe2c0-871c-4504-ba81-f66e7a95c31b
+name: pulp-log-analysis
+version: 1
+tags: {}
+globalArguments: {}
+methods: {}
