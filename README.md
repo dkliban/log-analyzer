@@ -15,6 +15,18 @@ Scans the last hour of logs from all `pulp-api` pods in the `pulp-prod` OpenShif
 1. `analyze-logs` — fetches logs from all running `pulp-api` pods and outputs slow endpoints
 2. `manage-jira-issues` — creates or comments on Jira issues for each slow endpoint
 
+## Installing Swamp
+
+```bash
+curl -fsSL https://swamp.club/install.sh | sh
+```
+
+Then verify the installation:
+
+```bash
+swamp --version
+```
+
 ## Prerequisites
 
 - `oc` CLI installed and logged in to the OpenShift cluster with access to the `pulp-prod` namespace
